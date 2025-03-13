@@ -1,4 +1,4 @@
-import React, {FC} from "react";
+import React, {FC, useEffect} from "react";
 
 type PropsType = {
     id: number;
@@ -10,6 +10,14 @@ type PropsType = {
 
 const QuestionCard: FC<PropsType> = props => {
     const {id, title, isPublished, deleteQuestion, editQuestion} = props
+
+    useEffect(() => {
+        console.log('mounted')
+        return () => {
+            console.log('unmounted')
+            //销毁时会触发
+        }
+    }, [])
 
     //编辑
     function edit(id: number) {

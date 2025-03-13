@@ -9,6 +9,14 @@ function QuestionList() {
     ]);
 
 
+    useEffect(() => {
+        console.log('加载请求')
+    }, []) //初次渲染触发
+
+    useEffect(() => {
+        console.log('加载请求')
+    }, [questions]) //依赖项更新才会触发
+
     function addQuestion() {
         const num = Number(Math.random().toString().slice(-3));
 
@@ -47,7 +55,7 @@ function QuestionList() {
                 {questions.map(question => {
                     const {id, title, isPublished} = question
                     return (
-                        <QuestionCard id={id} title={title} isPublished={isPublished} deleteQuestion={deleteQuestion}
+                        <QuestionCard key={id} id={id} title={title} isPublished={isPublished} deleteQuestion={deleteQuestion}
                                       editQuestion={editQuestion}/>)
                 })}
             </div>
