@@ -1,16 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import TsxBase from "./TsxBase";
 import List from "./List";
 import Button from "./Button";
+import State from './State';
+import QuestionList from "./question/QuestionList";
+import ImmerDemo from "./immer/ImmerDemo";
 
 function App() {
     return (
         <div className="App">
-            <TsxBase/>
-            <List/>
+            <ImmerDemo/>
+            <QuestionList/>
+            {/*<List/>*/}
             <Button/>
+            <State/>
+            <TsxBase/>
         </div>
     );
 }
